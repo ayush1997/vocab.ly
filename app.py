@@ -42,12 +42,13 @@ def process(result,word):
 
 @app.route('/api', methods=['GET','POST'])
 def main():
+
     if request.method == 'POST':
         print "POSTED"
 
         raw = request.get_data()
         data = request.json
-        print b
+        print data
 
         try:
             usr_id = data['message']['chat']['id']
@@ -75,6 +76,7 @@ def main():
         if data  != "":
             url = "https://api.telegram.org/bot183846920:AAG8aKPDPoKwgNuMomNCTKm6D-FTi9L0NLI/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data+""
             requests.get(url)
+            
     elif request.method == "GET":
         print "error"
 
