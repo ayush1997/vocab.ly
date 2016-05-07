@@ -11,6 +11,12 @@ app.secret_key = "secret"
 api_keys = ['0c209d14061fe2f68b64e9dfd9453280','88044ee383eef5827ee87f3022224354']
 
 
+def process(result,word):
+    st = ""
+    key = result.keys()
+    print key
+    l = len(key)
+
 @app.route('/api', methods=['GET','POST'])
 def main():
     if request.method == 'POST':
@@ -18,7 +24,7 @@ def main():
 
         raw = request.get_data()
         data = request.json
-        # print b
+        print b
 
         try:
             usr_id = data['message']['chat']['id']
@@ -40,10 +46,12 @@ def main():
                 if c.status_code == 200:
                     result = c.json()
                     print result
+                    txt = process(result,i)
+                    data =  data + txt
 
-
-        url = "https://api.telegram.org/bot236532746:AAErzQe-tsFHfcy-GHM8uSVdKnZVUZvK2M4/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data+""
-        requests.get(url)
+        if data  != "":
+            url = "https://api.telegram.org/bot236532746:AAErzQe-tsFHfcy-GHM8uSVdKnZVUZvK2M4/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data+""
+            requests.get(url)
     elif request.method == "GET":
         print "error"
 
