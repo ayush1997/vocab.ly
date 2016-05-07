@@ -25,14 +25,15 @@ def process(result,word):
         st = st +" "+ key[i].upper()+": "
         print st
             f = ["Not gettng anhing"]
-            
+
         if len(f) > 5:
             for k in range(5):
                 st = st+" "+f[k]
         else:
             for j in f:
                 st = st+" "+j
-
+                
+    st = "*"+word+"*"+"```" + st + "```"
     return st
 
 @app.route('/api', methods=['GET','POST'])
