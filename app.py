@@ -37,9 +37,10 @@ def main():
                 new_url = "http://words.bighugelabs.com/api/2/"+str(api_keys[val])+"/"+i+"/json"
                 c = requests.get(new_url)
 
-
-                result = c.json()
-
+                if c.status_code == 200:
+                    result = c.json()
+                    print result
+                    
 
     elif request.method == "GET":
         print "error"
