@@ -17,6 +17,21 @@ def process(result,word):
     print key
     l = len(key)
 
+    for i in range(l):
+        f = result[key[i]]['syn']
+
+        st = st +" "+ key[i].upper()+": "
+        print st
+
+        if len(f) > 5:
+            for k in range(5):
+                st = st+" "+f[k]
+        else:
+            for j in f:
+                st = st+" "+j
+
+    return st
+
 @app.route('/api', methods=['GET','POST'])
 def main():
     if request.method == 'POST':
