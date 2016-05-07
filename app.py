@@ -73,7 +73,7 @@ def main():
                     data =  data + txt
 
         if data  != "":
-            url = "https://api.telegram.org/bot183846920:AAGxGTDQXECbBOVDXRa6DLvssQ_MPucDERs/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data+""
+            url = "https://api.telegram.org/bot183846920:AAG8aKPDPoKwgNuMomNCTKm6D-FTi9L0NLI/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data+""
             requests.get(url)
     elif request.method == "GET":
         print "error"
@@ -88,6 +88,6 @@ def main():
 
 
 if __name__ == '__main__' :
-	# port = int(os.environ.get('PORT',443))
-	# app.run(host='0.0.0.0',port=port)
-	app.run(debug=True)
+	port = int(os.environ.get('PORT',443))
+	app.run(host='0.0.0.0',port=port)
+	# app.run(debug=True)
