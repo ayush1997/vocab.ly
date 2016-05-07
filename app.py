@@ -21,10 +21,14 @@ def process(result,word):
         try:
             f = result[key[i]]['syn']
         except:
+            try:
+                f = result[key[i]]['sim']
+            except:
+                f = ["Not gettng anhing"]
+        print f
 
         st = st +" "+ key[i].upper()+": "
         print st
-            f = ["Not gettng anhing"]
 
         if len(f) > 5:
             for k in range(5):
@@ -33,7 +37,7 @@ def process(result,word):
             for j in f:
                 st = st+" "+j
 
-    st = "*"+word+"*"+"```" + st + "```"
+    st = "*" + word+ "*" + "```" + st + "```"
     return st
 
 @app.route('/api', methods=['GET','POST'])
