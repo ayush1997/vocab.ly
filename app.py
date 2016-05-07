@@ -32,7 +32,7 @@ def process(result,word):
         else:
             for j in f:
                 st = st+" "+j
-                
+
     st = "*"+word+"*"+"```" + st + "```"
     return st
 
@@ -69,7 +69,7 @@ def main():
                     data =  data + txt
 
         if data  != "":
-            url = "https://api.telegram.org/bot236532746:AAErzQe-tsFHfcy-GHM8uSVdKnZVUZvK2M4/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data+""
+            url = "https://api.telegram.org/bot183846920:AAGxGTDQXECbBOVDXRa6DLvssQ_MPucDERs/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data+""
             requests.get(url)
     elif request.method == "GET":
         print "error"
