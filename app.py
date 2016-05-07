@@ -20,6 +20,12 @@ def main():
         data = request.json
         # print b
 
+        try:
+            usr_id = b['message']['chat']['id']
+            text = b['message']['text']
+        except:
+            text=" "
+
     elif request.method == "GET":
         print "error"
 
