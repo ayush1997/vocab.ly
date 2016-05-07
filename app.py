@@ -74,7 +74,7 @@ def main():
                     data_new =  data_new + txt
 
         if data_new  != "":
-            url = "https://api.telegram.org/bot183846920:AAG8aKPDPoKwgNuMomNCTKm6D-FTi9L0NLI/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data+""
+            url = "https://api.telegram.org/bot183846920:AAG8aKPDPoKwgNuMomNCTKm6D-FTi9L0NLI/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data_new+""
             requests.get(url)
 
     elif request.method == "GET":
