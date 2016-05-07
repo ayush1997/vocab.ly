@@ -13,9 +13,15 @@ api_keys = ['0c209d14061fe2f68b64e9dfd9453280','88044ee383eef5827ee87f3022224354
 
 @app.route('/api', methods=['GET','POST'])
 def main():
+    if request.method == 'POST':
+        print "POSTED"
 
+        raw_data = request.get_data()
+        data = request.json
+        # print b
 
-
+    elif request.method == "GET":
+        print "error"
 
 
 
