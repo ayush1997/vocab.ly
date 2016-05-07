@@ -16,15 +16,30 @@ def main():
     if request.method == 'POST':
         print "POSTED"
 
-        raw_data = request.get_data()
+        raw = request.get_data()
         data = request.json
         # print b
 
         try:
-            usr_id = b['message']['chat']['id']
-            text = b['message']['text']
+            usr_id = data['message']['chat']['id']
+            text = data['message']['text']
         except:
             text=" "
+
+        data_new = ""
+        dic = text.split(' ')
+        for i in dic:
+            if len(i) >= 5:
+                print i
+                val = random.randint(0,1)
+                print api_keys[val]
+
+                new_url = "http://words.bighugelabs.com/api/2/"+str(api_keys[val])+"/"+i+"/json"
+                c = requests.get(new_url)
+
+
+                result = c.json()
+
 
     elif request.method == "GET":
         print "error"
