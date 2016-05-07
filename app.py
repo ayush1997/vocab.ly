@@ -18,11 +18,14 @@ def process(result,word):
     l = len(key)
 
     for i in range(l):
-        f = result[key[i]]['syn']
+        try:
+            f = result[key[i]]['syn']
+        except:
 
         st = st +" "+ key[i].upper()+": "
         print st
-
+            f = ["Not gettng anhing"]
+            
         if len(f) > 5:
             for k in range(5):
                 st = st+" "+f[k]
