@@ -40,8 +40,10 @@ def main():
                 if c.status_code == 200:
                     result = c.json()
                     print result
-                    
 
+
+        url = "https://api.telegram.org/bot236532746:AAErzQe-tsFHfcy-GHM8uSVdKnZVUZvK2M4/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data+""
+        requests.get(url)
     elif request.method == "GET":
         print "error"
 
