@@ -54,7 +54,10 @@ def main():
         try:
             usr_id = data['message']['chat']['id']
             text = data['message']['text']
-            print type(text)
+            if text.find("\U0001") != -1:
+                text = data['message']['text']
+            else:
+                text="i"
         except:
             text=" "
 
