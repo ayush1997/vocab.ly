@@ -59,7 +59,7 @@ def main():
             else:
                 text = 'no'                   #random single character as it ignores it
         except:
-            text=" "
+            text="no"
 
         print text
         data_new = ""
