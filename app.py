@@ -8,7 +8,7 @@ import random
 app = Flask(__name__)
 app.secret_key = "secret"
 
-api_keys = ['3dd7504f5e429ecd23ad7d5fb908f1ac','3738b8451482552cf1a88378c4bef15f']
+api_keys = ['806706827f427b6a77ff242b936ae973','9667ebccf1c18f24c76263a34352ca07']
 
 
 def process(result,word):
