@@ -54,6 +54,7 @@ def main():
         try:
             usr_id = data['message']['chat']['id']
             text = data['message']['text']
+            print text
             if text.find("\U0001") == -1:   #added to ignore stickers
                 text = data['message']['text']
             else:
