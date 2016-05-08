@@ -8,7 +8,7 @@ import random
 app = Flask(__name__)
 app.secret_key = "secret"
 
-api_keys = ['806706827f427b6a77ff242b936ae973','9667ebccf1c18f24c76263a34352ca07']
+api_keys = ['d687a4bbd8b4a787b2f8c841db313763','806706827f427b6a77ff242b936ae973','9667ebccf1c18f24c76263a34352ca07','ef933fa89506062e98ba214165fdad5f','aba132076d484dcf8d0a69a299561c8e']
 
 
 def process(result,word):
@@ -62,7 +62,7 @@ def main():
         for i in dic:
             if len(i) >= 5:
                 print i
-                val = random.randint(0,1)
+                val = random.randint(0,4)
                 print api_keys[val]
 
                 new_url = "http://words.bighugelabs.com/api/2/"+str(api_keys[val])+"/"+i+"/json"
@@ -75,7 +75,7 @@ def main():
                     print result
                     txt = process(result,i)
                     data_new =  data_new + txt
-                    
+
         print data_new
         if data_new  != "":
             url = "https://api.telegram.org/bot183846920:AAG8aKPDPoKwgNuMomNCTKm6D-FTi9L0NLI/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data_new+""
