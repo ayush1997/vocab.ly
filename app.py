@@ -30,8 +30,8 @@ def process(result,word):
         st = st +" "+ key[i].upper()+": "
         print st
 
-        if len(f) > 5:
-            for k in range(5):
+        if len(f) > 3:
+            for k in range(3):
                 st = st+" "+f[k]
         else:
             for j in f:
