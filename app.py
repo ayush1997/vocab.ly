@@ -57,7 +57,7 @@ def main():
             if text.find("\U0001") == -1:   #added to ignore stickers
                 text = data['message']['text']
             else:
-                text="i"                   #random single character as it ignores it
+                text = 'no'                   #random single character as it ignores it
         except:
             text=" "
 
