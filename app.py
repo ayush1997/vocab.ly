@@ -54,6 +54,7 @@ def main():
         try:
             usr_id = data['message']['chat']['id']
             text = data['message']['text']
+            print type(text)
         except:
             text=" "
 
