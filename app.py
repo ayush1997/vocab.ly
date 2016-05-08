@@ -55,12 +55,13 @@ def main():
             usr_id = data['message']['chat']['id']
             text = data['message']['text']
             if text.find("\U0001") != -1:   #added to ignore stickers
-                text = 'i'
+                text = data['message']['text']
             else:
-                text = data['message']['text']                  #random single character as it ignores it
+                text="i"                   #random single character as it ignores it
         except:
             text=" "
 
+        print text
         data_new = ""
         dic = text.split(' ')
         for i in dic:
