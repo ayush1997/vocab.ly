@@ -75,7 +75,7 @@ def main():
                     print result
                     txt = process(result,i)
                     data_new =  data_new + txt
-                    break
+                    
         print data_new
         if data_new  != "":
             url = "https://api.telegram.org/bot183846920:AAG8aKPDPoKwgNuMomNCTKm6D-FTi9L0NLI/sendMessage?chat_id=" + str(usr_id) + "&parse_mode=markdown&text="+data_new+""
